@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/',(req,res,next)=>{
     const products = admin.products;
-    res.render("shop",{prods:products, pageTitle:'My Shop',hasProducts:products.length>0});
+    res.render("shop",{prods:products, pageTitle:'My Shop',hasProducts:products.length>0,path:'/admin/add-product'});
     // console.log("shop.js-> products\n",admin.products)
     // res.sendFile(path.join(rootDir,'views','shop.html'))
 })

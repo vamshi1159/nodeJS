@@ -20,8 +20,8 @@ const app = express();
 //we need to set engine based on how you register 
 //here hbs is used ,so files need to have 404.hbs extension
 //if handlebars then 404.handlebars
-app.engine("hbs",expressHbs());
-app.set("view engine","hbs");
+// app.engine("hbs",expressHbs());
+app.set("view engine","ejs");
 
 app.set("views","views");
 
@@ -39,7 +39,7 @@ app.use("/admin",admin.routes);
 app.use(shopRoutes)
 
 app.use((req,res,next) => {
-    res.status(404).render("404",{pageTitle:'Page Not Found'});
+    res.status(404).render("404",{pageTitle:'Page Not Found', path:null});
 })
 
 app.listen(3000)
