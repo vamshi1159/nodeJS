@@ -75,6 +75,9 @@ app.post("/")<br>
 app.put("/")<br>
 app.patch("/")<br>
 app.delete("/")<br>
+----------------------------------------------------------------------------------------------------------------------------------------------<br>
+app.use("/product/:productId") & app.use("/product/delete"), need to know the order, if id controller placed first, the delete will be ignored.<br>
+check for the use case.
 
 # Using Express Router
 
